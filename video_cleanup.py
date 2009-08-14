@@ -35,11 +35,9 @@ allowedFileRe = re.compile(ALLOWED_FILES)
 vidRe = re.compile('^VIDEO:\s+\[\w+\]\s+(\d+)x(\d+)\s+(\d+)bpp\s+([\d\.]+)\s+fps\s+([\d\.]+)\s+kbps', re.MULTILINE)
 
 def check_file(fileName):
-    print fileName
-    return
     if allowedFileRe.search(fileName) == None:
         return
-    
+
     output = Popen(("mplayer", "-identify", "-frames", "0", "-ao", "null", fileName), stdout=PIPE, stderr=PIPE).communicate()[0]
     #VIDEO:  [XVID]  512x384  24bpp  29.970 fps  1196.3 kbps (146.0 kbyte/s)
     match = vidRe.search(output)
