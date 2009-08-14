@@ -11,7 +11,7 @@
 # Example usage:
 #
 # 1.) Build the script
-#  % ./video_cleanup.py **/*.* > rm_script
+#  % ./video_cleanup.py someDir
 # 2.) Examine
 #  % cat rm_script
 # 3.) Execute
