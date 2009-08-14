@@ -51,13 +51,13 @@ def check_file(fileName):
             'kbps': abs(float(match.group(5)))
         }
 
-    for key in minimum:
-        if videoInfo[key] == 0:
-            pass
-        elif videoInfo[key] < minimum[key]:
-            print '# %s at %d did not reach the minimum of %d' % (key, videoInfo[key], minimum[key])
-            print 'rm \"%s\"' % (fileName)
-            break
+        for key in minimum:
+            if videoInfo[key] == 0:
+                pass
+            elif videoInfo[key] < minimum[key]:
+                print '# %s at %d did not reach the minimum of %d' % (key, videoInfo[key], minimum[key])
+                print 'rm \"%s\"' % (fileName)
+                break
 
 def check_directory(path):
     for root, dirs, files in os.walk(path):
