@@ -1,12 +1,5 @@
 #!/usr/bin/env python
 '''
-prcleanup.py - Delete poor quality videos.
-
-Possibly the most handy hack-job script ever written. Instead of removing the
-files, I prefer to print output that can be piped to /bin/sh. That way I can
-look it over first, then run sh on it to actually remove.
-
-
 Usage:
 ./prcleanup.py DIRECTORY [DIRECTORY..]
 ie:
